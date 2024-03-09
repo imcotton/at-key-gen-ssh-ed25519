@@ -1,4 +1,4 @@
-import ssh from 'npm:ed25519-keygen/ssh';
+import ssh from 'npm:ed25519-keygen@~0.4.11/ssh';
 
 import { PBKDF2 } from './pbkdf2.ts';
 
