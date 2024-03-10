@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/imcotton/at-key-gen-ssh-ed25519/graph/badge.svg)](https://codecov.io/gh/imcotton/at-key-gen-ssh-ed25519)
+
 reproducible **SSH Keygen** by `PBKDF2` + `Ed25519`
 
 
