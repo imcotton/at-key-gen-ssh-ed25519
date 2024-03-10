@@ -8,7 +8,7 @@ import { args, encode } from './utils.ts';
 
 
 
-type Keys = Readonly<{
+export type Keys = Readonly<{
     publicKeyBytes: Uint8Array;
     publicKey: string;
     fingerprint: string;
