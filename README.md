@@ -54,3 +54,7 @@ reproducible **SSH Keygen** by `PBKDF2` + `Ed25519`
 
     deno run jsr:@key/gen-ssh-ed25519/uuid
 
+or
+
+    node -p 'crypto.randomUUID()'
+
