@@ -1,0 +1,35 @@
+name: Checking
+
+on: push
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v4
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - name: Run linter
+        run: deno lint
+
+      - name: Run tests
+        run: |-
+          deno test --quiet --coverage
+          deno coverage --lcov --output=cov.lcov
+          deno coverage
+
+      - name: Run Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          slug: imcotton/at-key-gen-ssh-ed25519
+          token: ${{ secrets.CODECOV_TOKEN }}
+
