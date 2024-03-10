@@ -16,7 +16,7 @@ reproducible **SSH Keygen** by `PBKDF2` + `Ed25519`
 | round: 400_000 |
 |----------------|
 ↓
-↓
+|-- 32 bytes entropy
 ↓
 |--Ed25519--------------|
 |                       |
