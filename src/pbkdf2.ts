@@ -4,33 +4,42 @@ import { webcrypto } from './utils.ts';
 
 
 
-export async function PBKDF2 (opts: {
+export const PBKDF2 = gen_PBKDF2({});
 
-        salt: BufferSource,
-        passphrase: BufferSource,
+export function gen_PBKDF2 ({
 
-}): Promise<ArrayBuffer> {
+        byte = 32,
+        hash = 'SHA-512',
+        iterations = 400_000,
 
-    const { salt, passphrase } = opts;
+}) {
 
-    const name = 'PBKDF2';
-    const byte = 32;
-    const hash = 'SHA-512';
-    const iterations = 400_000;
+    return async function (opts: {
 
-    const base = await webcrypto.subtle.importKey(
-        'raw',
-        passphrase,
-        { name },
-        false,
-        [ 'deriveBits' ],
-    );
+            salt: BufferSource,
+            passphrase: BufferSource,
 
-    return webcrypto.subtle.deriveBits(
-        { name, salt, hash, iterations },
-        base,
-        byte * 8,
-    );
+    }): Promise<ArrayBuffer> {
+
+        const { salt, passphrase } = opts;
+
+        const name = 'PBKDF2';
+
+        const base = await webcrypto.subtle.importKey(
+            'raw',
+            passphrase,
+            { name },
+            false,
+            [ 'deriveBits' ],
+        );
+
+        return webcrypto.subtle.deriveBits(
+            { name, salt, hash, iterations },
+            base,
+            byte * 8,
+        );
+
+    };
 
 }
 
