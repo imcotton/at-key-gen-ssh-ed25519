@@ -4,12 +4,14 @@ import { webcrypto } from './utils.ts';
 
 
 
-export async function PBKDF2 (
+export async function PBKDF2 (opts: {
 
         salt: BufferSource,
         passphrase: BufferSource,
 
-): Promise<ArrayBuffer> {
+}): Promise<ArrayBuffer> {
+
+    const { salt, passphrase } = opts;
 
     const name = 'PBKDF2';
     const byte = 32;
