@@ -6,6 +6,13 @@
   "imports": {
     "ed25519-keygen/ssh": "npm:ed25519-keygen@~0.4.11/ssh"
   },
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noUncheckedIndexedAccess": true,
+    "strict": true
+  },
   "publish": {
     "include": [
       "deno.json",
