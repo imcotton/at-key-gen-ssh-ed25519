@@ -30,7 +30,10 @@ export async function main ([
         throw new Error('invalid salt, at least 5 characters long');
     }
 
-    const entropy = await PBKDF2(encode(salt), encode(passphrase));
+    const entropy = await PBKDF2({
+        salt: encode(salt),
+        passphrase: encode(passphrase),
+    });
 
     return ssh(new Uint8Array(entropy));
 
