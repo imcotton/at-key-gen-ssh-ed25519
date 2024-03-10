@@ -21,10 +21,14 @@ export type Keys = Readonly<{
 
 export async function main ([
 
-              salt = 'the default salt',
+        salt,
         passphrase = 'the default passphrase',
 
 ]: ReadonlyArray<string>): Promise<Keys> {
+
+    if (salt == null || salt.trim().length < 5) {
+        throw new Error('invalid salt, at least 5 characters long');
+    }
 
     const entropy = await PBKDF2(encode(salt), encode(passphrase));
 
