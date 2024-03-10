@@ -9,8 +9,8 @@ reproducible **SSH Keygen** by `PBKDF2` + `Ed25519`
 ```
 |--PBKDF2--------|
 |                |
-|           salt <- 'the default salt'
-|     passphrase <- 'the default passphrase'
+|           salt <- (at least 5 characters long)
+|     passphrase <- "the default passphrase"
 |                |
 |  hash:  sha512 |
 | round: 400_000 |
@@ -36,17 +36,17 @@ reproducible **SSH Keygen** by `PBKDF2` + `Ed25519`
 ### print fingerprint
 
     deno run jsr:@key/gen-ssh-ed25519 \
-             <salt> <passphrase>
+             salt <passphrase>
 
 ### create public key
 
     deno run jsr:@key/gen-ssh-ed25519/pub \
-             <salt> <passphrase>
+             salt <passphrase>
 
 ### create private key
 
     deno run jsr:@key/gen-ssh-ed25519/private \
-             <salt> <passphrase>
+             salt <passphrase>
 
 ### create **UUID** via `crypto.randomUUID`
 
