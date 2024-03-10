@@ -1,5 +1,0 @@
-{
-  "dependencies": {
-    "ed25519-keygen": "~0.4.11"
-  }
-}
