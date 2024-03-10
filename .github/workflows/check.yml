@@ -27,6 +27,9 @@ jobs:
           deno coverage --lcov --output=cov.lcov
           deno coverage
 
+      - name: Run publish --dry-run
+        run: deno publish --dry-run
+
       - name: Run Codecov
         uses: codecov/codecov-action@v4.0.1
         with:
