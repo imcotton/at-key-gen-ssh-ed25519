@@ -19,11 +19,11 @@
       "package.json",
       "LICENSE.txt",
       "README.md",
+      "./tests",
       "./src"
     ],
     "exclude": [
       "node_modules/",
-      "tests",
       ".git/",
       ".vscode/",
       ".github/"
