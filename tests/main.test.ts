@@ -3,7 +3,7 @@ import { describe, it } from 'jsr:@std/testing/bdd';
 
 import {
     main,
-} from '../src/mod.ts';
+} from '../src/main.ts';
 
 
 
