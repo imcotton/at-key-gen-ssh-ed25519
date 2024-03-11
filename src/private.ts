@@ -1,4 +1,4 @@
-import { main } from './mod.ts';
+import { main } from './main.ts';
 
 import { args } from './utils.ts';
 
