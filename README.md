@@ -17,9 +17,9 @@ reproducible **SSH Keygen** by `PBKDF2` + `Ed25519`
 |  hash:  sha512 |
 | round: 400_000 |
 |----------------|
-↓
-|-- 32 bytes entropy
-↓
+▼
+▼ -- 32 bytes entropy
+▼
 |--Ed25519--------------|
 |                       |
 | npm:ed25519-keygen    |
