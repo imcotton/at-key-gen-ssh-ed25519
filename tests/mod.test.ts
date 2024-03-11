@@ -29,5 +29,30 @@ describe('main', function () {
 
     });
 
+    it('pins on salt=foobar', async function () {
+
+        const { publicKey, fingerprint, privateKey } = await main([
+            'foobar',
+        ]);
+
+        ast.assertStringIncludes(publicKey, 'XttcbGJ1lmj');
+        ast.assertStringIncludes(fingerprint, 'R6MMvb6J75e2');
+        ast.assertStringIncludes(privateKey, 'bNV2L5NXt');
+
+    });
+
+    it('pins on salt=foobar passphrase=42', async function () {
+
+        const { publicKey, fingerprint, privateKey } = await main([
+            'foobar',
+            '42',
+        ]);
+
+        ast.assertStringIncludes(publicKey, 'G0wUQlHgQ');
+        ast.assertStringIncludes(fingerprint, '9HPLAHyrHt');
+        ast.assertStringIncludes(privateKey, 'DmMmHYjLBe');
+
+    });
+
 });
 
