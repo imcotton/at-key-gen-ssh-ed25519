@@ -1,4 +1,4 @@
-import ssh from 'ed25519-keygen/ssh';
+import { getKeys } from 'ed25519-keygen/ssh';
 
 import { PBKDF2 } from './pbkdf2.ts';
 
@@ -35,7 +35,7 @@ export async function main ([
         passphrase: encode(passphrase),
     });
 
-    return ssh(new Uint8Array(entropy));
+    return getKeys(new Uint8Array(entropy));
 
 }
 
