@@ -2,7 +2,7 @@ import * as ast from 'jsr:@std/assert';
 import * as hex from 'jsr:@std/encoding/hex';
 import { describe, it } from 'jsr:@std/testing/bdd';
 
-import { encode } from "../src/utils.ts";
+import { encode } from '../src/utils.ts';
 
 import { gen_PBKDF2 } from '../src/pbkdf2.ts';
 
