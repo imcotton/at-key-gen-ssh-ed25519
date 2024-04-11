@@ -31,8 +31,8 @@ jobs:
         run: deno publish --dry-run
 
       - name: Run Codecov
-        uses: codecov/codecov-action@v4.0.1
+        uses: codecov/codecov-action@v4
         with:
           slug: imcotton/at-key-gen-ssh-ed25519
-          token: ${{ secrets.CODECOV_TOKEN }}
+          use_oidc: true
 
