@@ -28,7 +28,7 @@ jobs:
           deno coverage
 
       - name: Run publish --dry-run
-        run: deno publish --dry-run
+        run: deno publish --dry-run --allow-dirty
 
       - name: Run Codecov
         uses: codecov/codecov-action@v4.0.1
