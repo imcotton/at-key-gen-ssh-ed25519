@@ -4,7 +4,7 @@
   "version": "0.5.1",
   "lock": false,
   "imports": {
-    "ed25519-keygen/ssh": "npm:ed25519-keygen@~0.5.0/ssh"
+    "ed25519-keygen/ssh": "npm:ed25519-keygen@~0.6.0/ssh"
   },
   "compilerOptions": {
     "noImplicitAny": true,
