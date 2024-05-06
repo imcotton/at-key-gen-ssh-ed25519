@@ -38,18 +38,15 @@ reproducible **SSH Keygen** by `PBKDF2` + `Ed25519`
 
 ### print fingerprint
 
-    deno run jsr:@key/gen-ssh-ed25519 \
-             salt <passphrase>
+    deno run jsr:@key/gen-ssh-ed25519 salt <passphrase>
 
 ### create public key
 
-    deno run jsr:@key/gen-ssh-ed25519/pub \
-             salt <passphrase>
+    deno run jsr:@key/gen-ssh-ed25519/pub salt <passphrase>
 
 ### create private key
 
-    deno run jsr:@key/gen-ssh-ed25519/private \
-             salt <passphrase>
+    deno run jsr:@key/gen-ssh-ed25519/private salt <passphrase>
 
 ### create **UUID** via `crypto.randomUUID`
 
