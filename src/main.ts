@@ -1,4 +1,4 @@
-import { getKeys } from 'ed25519-keygen/ssh';
+import { getKeys } from 'micro-key-producer/ssh.js';
 
 import { PBKDF2 } from './pbkdf2.ts';
 
