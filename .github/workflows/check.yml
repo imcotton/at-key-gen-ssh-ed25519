@@ -4,6 +4,7 @@ on: push
 
 permissions:
   contents: read
+  id-token: write
 
 jobs:
   test:
@@ -33,6 +34,6 @@ jobs:
       - name: Run Codecov
         uses: codecov/codecov-action@v4
         with:
-          slug: imcotton/at-key-gen-ssh-ed25519
-          token: ${{ secrets.CODECOV_TOKEN }}
+          files: cov.lcov
+          use_oidc: true
 
