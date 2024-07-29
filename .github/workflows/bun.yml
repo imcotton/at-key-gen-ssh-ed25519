@@ -1,0 +1,53 @@
+name: Bundle
+
+on: push
+
+jobs:
+
+  Build:
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: preBuild
+        run: |-
+
+          mkdir ./dist
+
+          bun init --yes
+          bun add  --exact micro-key-producer@0.7.0
+          bun install
+
+      - name: Build
+        run: bun build ./src/bin.ts
+                 --target node
+                 --format esm
+                 --outdir ./dist
+                 --entry-naming [name].[hash].mjs
+
+      - name: Minify
+        run: bun build ./src/bin.ts
+                 --target node
+                 --format esm
+                 --outdir ./dist
+                 --entry-naming [name]-min.[hash].mjs
+                 --minify
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: key-gen-${{ hashFiles('./dist/*') }}
+          path: ./dist
+
