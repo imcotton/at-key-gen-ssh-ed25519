@@ -8,12 +8,12 @@ import { encode } from './utils.ts';
 
 
 
-export type Keys = Readonly<{
-    publicKeyBytes: Uint8Array;
-    publicKey: string;
-    fingerprint: string;
-    privateKey: string;
-}>;
+export interface Keys {
+    readonly publicKeyBytes: Uint8Array;
+    readonly publicKey: string;
+    readonly fingerprint: string;
+    readonly privateKey: string;
+}
 
 
 
