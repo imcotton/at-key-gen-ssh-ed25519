@@ -14,14 +14,12 @@ export function gen_PBKDF2 ({
 
 }) {
 
-    return async function (opts: {
+    return async function ({ salt, passphrase }: {
 
             salt: BufferSource,
             passphrase: BufferSource,
 
     }): Promise<ArrayBuffer> {
-
-        const { salt, passphrase } = opts;
 
         const name = 'PBKDF2';
 
