@@ -1,6 +1,6 @@
-import * as ast from 'jsr:@std/assert';
-import * as hex from 'jsr:@std/encoding/hex';
-import { describe, it } from 'jsr:@std/testing/bdd';
+import * as ast from 'jsr:@std/assert@1';
+import * as hex from 'jsr:@std/encoding@1/hex';
+import { describe, it } from 'jsr:@std/testing@1/bdd';
 
 import { encode } from '../src/utils.ts';
 

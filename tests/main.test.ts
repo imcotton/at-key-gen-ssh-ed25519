@@ -1,5 +1,5 @@
-import * as ast from 'jsr:@std/assert';
-import { describe, it } from 'jsr:@std/testing/bdd';
+import * as ast from 'jsr:@std/assert@1';
+import { describe, it } from 'jsr:@std/testing@1/bdd';
 
 import {
     main,
