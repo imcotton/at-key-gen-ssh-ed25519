@@ -4,7 +4,7 @@
   "version": "0.7.1",
   "lock": false,
   "imports": {
-    "micro-key-producer/ssh.js": "npm:micro-key-producer@~0.7.0/ssh.js"
+    "micro-key-producer/ssh.js": "jsr:@paulmillr/micro-key-producer@~0.7.3/ssh.js"
   },
   "compilerOptions": {
     "noImplicitAny": true,
