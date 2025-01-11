@@ -21,13 +21,14 @@ reproducible **SSH Keygen** by `PBKDF2` + `Ed25519`
 ▼
 ▼ -- 32 bytes entropy
 ▼
-|--Ed25519---------------|
-|                        |
-| npm:micro-key-producer |
-|     npm:@scure/base    |
-|     npm:@noble/hashes  |
-|     npm:@noble/curves  |
-|------------------------|
+|--Ed25519----------------------|
+|                               |
+| @paulmillr/micro-key-producer |
+│           /micro-packed       |
+|     @noble/hashes             |
+|     @noble/curves             |
+|     @scure/base               |
+|-------------------------------|
 ```
 
 > Credit to: https://github.com/paulmillr/micro-key-producer
