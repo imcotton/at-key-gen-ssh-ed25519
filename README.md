@@ -57,5 +57,6 @@ reproducible **SSH Keygen** by `PBKDF2` + `Ed25519`
 
 or
 
-    node -p 'crypto.randomUUID()'
+    deno eval -p 'crypto.randomUUID()'
+    node      -p 'crypto.randomUUID()'
 
