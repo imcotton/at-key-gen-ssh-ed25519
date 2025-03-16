@@ -32,7 +32,7 @@ jobs:
         run: deno publish --dry-run --allow-dirty
 
       - name: Run Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@0565863a31f2c772f9f0395002a31e3f06189574 # v5.4.0
         with:
           files: cov.lcov
           use_oidc: true
