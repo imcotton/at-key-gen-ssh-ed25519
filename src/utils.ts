@@ -8,7 +8,7 @@ export const { crypto: webcrypto } = globalThis;
 
 const txt = new TextEncoder();
 
-export function encode (str: string): Uint8Array {
+export function encode (str: string) {
 
     return txt.encode(str.normalize('NFKD'));
 
